@@ -1,0 +1,12 @@
+[submodule "gobgp"]
+	path = gobgp
+	url = https://github.com/watal/gobgp.git
+[submodule "exabgp"]
+	path = exabgp
+	url = https://github.com/yagipy/exabgp
+[submodule "bgp-ls-service-segment/gobgp"]
+	path = bgp-ls-service-segment/gobgp
+	url = https://github.com/watal/gobgp
+[submodule "bgp-ls-service-segment/exabgp"]
+	path = bgp-ls-service-segment/exabgp
+	url = https://github.com/yagipy/exabgp
