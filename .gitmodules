@@ -4,3 +4,7 @@
 [submodule "bgp-ls-service-segment/exabgp"]
 	path = bgp-ls-service-segment/exabgp
 	url = https://github.com/yagipy/exabgp
+[submodule "gobgp"]
+	path = gobgp
+	url = https://github.com/watal/gobgp.git
+	branch = feature/bgp-ls-service-segments
