@@ -5,22 +5,20 @@ mgmt:
   ipv6_subnet: 2001:172:100:100::/80
 topology:
   nodes:
-    gobgp1:
+    gobgp:
       kind: linux
-      image: ubuntu22.04:base
+      image: gobgp:watal
       binds:
-        - gobgp/cmd/gobgpd/gobgpd:/bin/gobgpd
-        - gobgp/cmd/gobgp/gobgp:/bin/gobgp
+        - ../gobgp/cmd/gobgpd/gobgpd:/bin/gobgpd
+        - ../gobgp/cmd/gobgp/gobgp:/bin/gobgp
         - startup/gobgp1/gobgpd.yml:/config/gobgpd.yml
       mgmt_ipv4: 172.100.100.101
-    gobgp2:
+    exabgp:
       kind: linux
-      image: ubuntu22.04:base
+      image: gobgp:watal
       binds:
-        - gobgp/cmd/gobgpd/gobgpd:/bin/gobgpd
-        - gobgp/cmd/gobgp/gobgp:/bin/gobgp
-        - startup/gobgp2/gobgpd.yml:/config/gobgpd.yml
+        - ../exabgp:/exabgp
       mgmt_ipv4: 172.100.100.102
 
   links:
-    - endpoints: ["gobgp1:eth1", "gobgp2:eth1"]
+    - endpoints: ["gobgp:eth1", "exabgp:eth1"]
