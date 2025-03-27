@@ -18,6 +18,8 @@ topology:
       image: gobgp:watal
       binds:
         - ../exabgp:/exabgp
+        - startup/exabgp/conf-srv6-bgpls-receiver.conf:/config/conf-srv6-bgpls-receiver.conf
+        - startup/exabgp/conf-srv6-bgpls-sender.conf:/config/conf-srv6-bgpls-sender.conf
       mgmt_ipv4: 172.100.100.102
 
   links:
